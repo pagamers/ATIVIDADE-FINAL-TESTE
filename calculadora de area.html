@@ -1,0 +1,21 @@
+<html> 
+    <Head>
+        <title>ATIVIDADES FINAL TESTE</title>
+    </Head>
+    <body>
+        <h1>Calculadora de area</h1>
+        <input type="number" id="base" placeholder="base">
+        <input type="number" id="altura" placeholder="altura">
+        <button onclick="calcular()">CALCULAR</button>
+        <div id="resultado"></div>
+
+    </body>
+    <script>
+        function calcular() {
+            let base = document.getElementById('base').value;
+            let altura = document.getElementById("altura").value;
+            let area = base * altura
+            document.getElementById('resultado').innerText = "area de: " + area
+        }
+    </script>
+</html>
