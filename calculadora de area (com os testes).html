@@ -1,0 +1,48 @@
+<html> 
+    <Head>
+        <title>ATIVIDADES FINAL TESTE</title>
+    </Head>
+    <body>
+        <h1>Calculadora de area</h1>
+        <input type="number" id="base" placeholder="base">
+        <input type="number" id="altura" placeholder="altura">
+        <button onclick="calcular()">CALCULAR</button>
+        <div id="resultado"></div>
+        <button onclick="testarcalculo()">testar calculo</button>
+        <button onclick="testa_componetes()">testar placeholder</button>
+        <div id="resultado2"></div>
+    </body>
+    <script>
+        function calcular() {
+            const base = document.getElementById('base').value;
+            const altura = document.getElementById('altura').value;
+            const area = base * altura;
+            document.getElementById('resultado').innerText = "area de: " + area;
+        }
+        function testarcalculo() {
+            document.getElementById('base').value = "2";
+            document.getElementById('altura').value = "2";
+            calcular();
+            const resultado_calculo = document.getElementById('resultado').innerText;
+
+            if (resultado_calculo === "area de: 4") {
+                document.getElementById('resultado').innerHTML = "teste aprovado✅";
+            } else {
+                document.getElementById('resultado').innerHTML = "teste falho❌";
+            }
+        }
+        function testa_componetes(){
+            const base = document.getElementById('base');
+            const altura = document.getElementById('altura');
+
+            if (base.placeholder === "base" && altura.placeholder === "altura") {
+                document.getElementById('resultado2').innerHTML = "teste aprovado✅";
+            } else {
+                document.getElementById('resultado2').innerHTML = "teste falho❌";
+            }
+
+            
+        }
+
+    </script>
+</html>
