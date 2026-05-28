@@ -1,0 +1,86 @@
+<html> 
+    <Head>
+        <title>ATIVIDADES FINAL TESTE</title>
+    </Head>
+    <body>
+        <h1>Calculadora de area</h1>
+        <input type="number" id="base" placeholder="base">
+        <input type="number" id="altura" placeholder="altura">
+        <button onclick="calcular()">CALCULAR</button>
+        <div id="resultado"></div>
+        <button onclick="testarcalculo()">testar calculo</button>
+        <button onclick="testa_componetes()">testar placeholder</button>
+        <div id="resultado2"></div>
+        <h2>calculadora de juros</h2>
+        <input type="number" id="valordaconta" placeholder="valor da conta">
+        <input type="number" id="juros" placeholder="juros">
+        <button onclick="calcularjuros()">CALCULAR JUROS</button>
+        <div id="resultado3"></div>
+        <button onclick="testarcalculojuros()">testar calculo</button>
+        <button onclick="testa_componetes_juros()">testar placeholder</button>
+    </body>
+    <script>
+        function calcular() {
+            const base = document.getElementById('base').value;
+            const altura = document.getElementById('altura').value;
+            const area = base * altura;
+            document.getElementById('resultado').innerText = "area de: " + area;
+        }
+        function testarcalculo() {
+            document.getElementById('base').value = "2";
+            document.getElementById('altura').value = "2";
+            calcular();
+            const resultado_calculo = document.getElementById('resultado').innerText;
+
+            if (resultado_calculo === "area de: 4") {
+                document.getElementById('resultado2').innerHTML = "teste aprovado✅";
+            } else {
+                document.getElementById('resultado2').innerHTML = "teste falho❌";
+            }
+        }
+        function testa_componetes(){
+            const base = document.getElementById('base');
+            const altura = document.getElementById('altura');
+
+            if (base.placeholder === "base" && altura.placeholder === "altura") {
+                document.getElementById('resultado2').innerHTML = "teste aprovado✅";
+            } else {
+                document.getElementById('resultado2').innerHTML = "teste falho❌";
+            }
+
+            
+        }
+        function calcularjuros() {
+            let valordaconta = document.getElementById('valordaconta').value;
+            let juros = document.getElementById('juros').value;
+            let porcentagendejuros = 1 + juros / 100
+            let resultado = valordaconta * porcentagendejuros
+            document.getElementById('resultado3').innerHTML = "valor final de : " + resultado;
+        }
+        function testarcalculojuros() {
+            document.getElementById('valordaconta').value = "1500";
+            document.getElementById('juros').value = "1";
+            calcularjuros();
+            const resultado_calculo = document.getElementById('resultado3').innerText;
+
+            if (resultado_calculo === "valor final de : 1515") {
+                document.getElementById('resultado3').innerHTML = "teste aprovado✅";
+            } else {
+                document.getElementById('resultado3').innerHTML = "teste falho❌";
+            }
+        }
+        function testa_componetes_juros(){
+            const base = document.getElementById('valordaconta');
+            const altura = document.getElementById('juros');
+
+            if (juros.placeholder === "juros" && valordaconta.placeholder === "valor da conta") {
+                document.getElementById('resultado3').innerHTML = "teste aprovado✅";
+            } else {
+                document.getElementById('resultado3').innerHTML = "teste falho❌";
+            }
+
+            
+        }
+
+    </script>
+</html>

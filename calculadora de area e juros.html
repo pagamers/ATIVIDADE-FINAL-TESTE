@@ -1,0 +1,33 @@
+<html> 
+    <Head>
+        <title>ATIVIDADES FINAL TESTE</title>
+    </Head>
+    <body>
+        <h1>Calculadora de area</h1>
+        <input type="number" id="base" placeholder="base">
+        <input type="number" id="altura" placeholder="altura">
+        <button onclick="calcular()">CALCULAR</button>
+        <div id="resultado"></div>
+        <h2>calculadora de juros</h2>
+        <input type="number" id="valordaconta" placeholder="valor da conta">
+        <input type="number" id="juros" placeholder="juros">
+        <button onclick="calcularjuros()">CALCULAR JUROS</button>
+        <div id="resultado2"></div>
+
+    </body>
+    <script>
+        function calcular() {
+            let base = document.getElementById('base').value;
+            let altura = document.getElementById("altura").value;
+            let area = base * altura
+            document.getElementById('resultado').innerText = "area de: " + area;
+        }
+        function calcularjuros() {
+            let valordaconta = document.getElementById('valordaconta').value;
+            let juros = document.getElementById('juros').value;
+            let porcentagendejuros = 1 + juros / 100
+            let resultado = valordaconta * porcentagendejuros
+            document.getElementById('resultado2').innerHTML = "valor final de : " + resultado;
+        }
+    </script>
+</html>
